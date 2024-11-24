@@ -23,7 +23,9 @@ public class PuzzleController {
 
     @PostMapping
     public String calculate(@RequestParam("numbersFile") MultipartFile numbersFile, Model model) {
-        model.addAttribute("longestSequence", puzzleService.findLongestSequence(numbersFile));
+        String longestSequence =  puzzleService.findLongestSequence(numbersFile);
+        model.addAttribute("longestSequence", longestSequence);
+        model.addAttribute("longestSequenceLength", longestSequence.length());
         return "puzzle";
     }
 }
