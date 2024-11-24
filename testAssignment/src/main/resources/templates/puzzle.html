@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Algorithm</title>
+    <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap/bootstrap.min.css">
+    <script src="/assets/js/bootstrap/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+<div class="row">
+    <div class="col d-flex justify-content-center">
+        <form th:action="@{/puzzle}" method="post" enctype="multipart/form-data">
+            <div class="row my-3">
+                <div class="col">
+                    <label for="numbersFile" class="form-label">Choose file with numbers:</label>
+                    <input class="form-control" type="file" id="numbersFile" name="numbersFile" accept=".txt" required>
+                </div>
+            </div>
+
+
+            <div class="row my-3">
+                <div class="col  d-flex justify-content-center">
+                    <p th:text="'longestSequence: ' + (${longestSequence} == null ? ' ' : ${longestSequence})"></p>
+                </div>
+            </div>
+
+            <div class="row my-3">
+                <div class="col  d-flex justify-content-center">
+                    <button type="submit" class="btn btn-success">Calculate</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
